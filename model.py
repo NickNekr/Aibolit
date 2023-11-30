@@ -1,10 +1,11 @@
 import torch
+from pathlib import Path
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 
 class GPT2Generator:
-    prefix = "<s>Категория: Травматология и ортопедия --> Вопрос: "
-    suffix = " ==> Ответ: "
+    prefix = "<s>▒~Zа▒~Bего▒~@и▒~O: Т▒~@авма▒~Bологи▒~O и о▒~@▒~Bопеди▒~O --> ▒~Rоп▒~@о▒~A: "
+    suffix = " ==> ▒~^▒~Bве▒~B: "
 
     def __init__(self, model_name_or_path):
         self.model = GPT2LMHeadModel.from_pretrained(model_name_or_path)
@@ -45,4 +46,6 @@ class GPT2Generator:
         return generated_text
 
 
-generator = GPT2Generator("./aibolit")
+
+generator = GPT2Generator("./src/Aibolit/aibolit")
+
