@@ -14,5 +14,5 @@ python3 pretrain_transformers.py \
   --per_gpu_train_batch_size 4 \
   --gradient_accumulation_steps 8 \
   --num_train_epochs 5 \
-  --block_size 512 \
+  --block_size 384 \
   --overwrite_output_dir

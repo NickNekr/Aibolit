@@ -23,6 +23,7 @@ class GPT2Generator:
         no_repeat_ngram_size=2,
         top_k=50,
         top_p=0.95,
+        do_sample=True,
     ):
         input_ids = self.tokenizer.encode(
             self.prefix + prompt + self.suffix, return_tensors="pt"
@@ -35,6 +36,8 @@ class GPT2Generator:
             no_repeat_ngram_size=no_repeat_ngram_size,
             top_k=top_k,
             top_p=top_p,
+            do_sample=do_sample,
+
         )
 
         generated_text = self.tokenizer.decode(
@@ -43,7 +46,7 @@ class GPT2Generator:
         return generated_text
 
 
-generator = GPT2Generator("gpt2")
+generator = GPT2Generator("./aibolit")
 prompt = "Подскажите, пожалуйста, вреден ли футбол для здоровья?"
 generated_text = generator.generate_text(prompt)
 print(generated_text)
