@@ -37,7 +37,6 @@ class GPT2Generator:
             top_k=top_k,
             top_p=top_p,
             do_sample=do_sample,
-
         )
 
         generated_text = self.tokenizer.decode(
@@ -47,6 +46,3 @@ class GPT2Generator:
 
 
 generator = GPT2Generator("./aibolit")
-prompt = "Подскажите, пожалуйста, вреден ли футбол для здоровья?"
-generated_text = generator.generate_text(prompt)
-print(generated_text)
